@@ -21,8 +21,8 @@ void merge(int l, int r){
     //anda com dois ponteiros verificando quem é o menor numero atual comparando entre os dois vetores (esquerda e direita)
     int i = 0, j = 0, k = l;
     while(i < n1 && j < n2){
-        if(L[i] < R[j]) arr[k] = L[i], i++; //realiza uma inversão
-        else arr[k] = R[j], j++;
+        if(L[i] < R[j]) arr[k] = L[i], i++;
+        else arr[k] = R[j], j++; //realiza uma inversão
         k++;
     }
     //dependendo dos valores pode acabar esse loop sem ter passado totalmente pelo L ou totalmente pelo R
