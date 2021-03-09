@@ -93,6 +93,5 @@ int main(){
         if(t) cout << "\n\n";
     }
     cout << "\n";
-    //cout << ans << "\n";
     return 0;
 }
