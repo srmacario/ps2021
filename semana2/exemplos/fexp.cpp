@@ -5,12 +5,12 @@ using namespace std;
 #define ll long long
 const ll MOD = 1e9+7;
 
-ll fexp(ll a, ll b){
+ll fexp(ll b, ll e, ll m = MOD){
     ll ans = 1;
-    while(b){
-        if(b%2) ans = ans*a % MOD;
-        a = a*a % MOD;
-        b /= 2;
+    while(e){
+        if(e&1) ans = (ans*b) % m;
+        b = (b*b) % m;
+        e /= 2;
     }
     return ans;
 }
@@ -18,5 +18,5 @@ ll fexp(ll a, ll b){
 int main(){
     ll a, b;
     cin >> a >> b;
-    cout << fexp(b,e);
+    cout << fexp(a,b) << "\n";
 }
