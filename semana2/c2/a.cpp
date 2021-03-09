@@ -40,7 +40,7 @@ vi merge(vi v){
         if(pl >= l.size()) ans.pb(r[pr++]);
         else if(pr >= r.size()) ans.pb(l[pl++]);
         else if(r[pr] >= l[pl]) ans.pb(l[pl++]);
-        else ans.pb(r[pr++]), cnt += l.size() - pl;
+        else ans.pb(r[pr++]), cnt += l.size() - pl; //inversion
     }
     return ans;
 }
