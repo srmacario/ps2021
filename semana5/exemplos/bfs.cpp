@@ -1,53 +1,29 @@
-#include <bits/stdc++.h>
+/**********************************************************************************
+* BFS (BREADTH-FIRST SEARCH)                                                      *
+* Description: Basic algorithm to traverse a graph prioritizing broadness rather  *
+* than depth.                                                                     *
+* Time complexity: O(V+E)                                                         *
+* Usage: bfs(node)                                                                *
+* Notation: s: starting node                                                      *
+*           adj[i]: adjacency list for node i                                     *
+*           vis[i]: visited state for node i (0 or 1)                             *
+**********************************************************************************/
 
-using namespace std;
-
-#define st first
-#define nd second
-#define pb push_back
-#define cl(x,v) memset((x), (v), sizeof(x))
-#define db(x) cerr << #x << " == " << x << endl
-#define dbs(x) cerr << x << endl
-#define _ << ", " <<
-
-typedef long long ll;
-typedef long double ld;
-typedef pair<int,int> pii;
-typedef pair<int, pii> piii;
-typedef pair<ll,ll> pll;
-typedef pair<ll, pll> plll;
-typedef vector<int> vi;
-typedef vector <vi> vii;
-
-const ld EPS = 1e-9, PI = acos(-1.);
-const ll LINF = 0x3f3f3f3f3f3f3f3f;
-const int INF = 0x3f3f3f3f, MOD = 1e9+7;
-const int N = 1e5+5;
-
-const int N = 1e5+10; 
-//distancia de um ponto i a raiz s
-int dist[N];
+const int N = 1e5+10; // Maximum number of nodes
+int vis[N];
 vi adj[N];
 queue <int> q;
 
 void bfs (int s) {
-    cl(dist, 63);
-    dist[s] = 0;
+    cl(vis, 0);
+    vis[s] = 1;
     q.push(s);
-    //vizinhos vao ser visitados pela ordem na fila
+
     while (!q.empty()) {
         int u = q.front(); q.pop();
-        //coloco todo vizinho na fila
-        for (auto v : adj[u])
-        if (dist[v] > dist[u] + 1) {
-            dist[v] = dist[u] + 1;
+        for (auto v : adj[u]) if (!vis[v]) {
+            vis[v] = 1;
             q.push(v);
         }
     }
-}
-
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    return 0;
 }
