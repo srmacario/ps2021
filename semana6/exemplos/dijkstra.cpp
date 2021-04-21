@@ -39,6 +39,7 @@ void dijkstra (int s) {
             int v = x.st;
             int w = x.nd;
             if (dist[v] > dist[u] + w) {
+                //par[v] = u;
                 dist[v] = dist[u] + w;
                 pq.push({-dist[v], v});
             }
