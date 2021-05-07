@@ -33,6 +33,7 @@ int main(){
     scanf("%d", &n);
     v.resize(n);
     for(int i = 0; i < n; i++) scanf("%d", &v[i]);
+    //lembre de manter uma copia do vetor original!
     //ordena
     sort(v.begin(), v.end());
     //deixa so os unicos
