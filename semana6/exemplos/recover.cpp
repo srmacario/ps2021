@@ -5,4 +5,6 @@ vi recover(int u){
         u = par[u];
     }
     ans.pb(u);
+    reverse(ans.begin(), ans.end());
+    return ans;
 }
